@@ -14,6 +14,7 @@ import { DirectorComponent } from '../director/director.component';
 })
 export class MovieCardComponent {
   movies: any[] = [];
+  favoriteMovies: any[] = [];
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
@@ -53,44 +54,44 @@ getMovies(): void {
    * @function getFavorites
    */
 
-  // getFavoriteMovies(): void {
-  //   this.fetchApiData.getFavoriteMovies().subscribe((response: any) => {
-  //     this.favoriteMovies = response.favoriteMovies;
-  //     console.log(this.favoriteMovies);
-  //   });
-  // }
+  getFavoriteMovies(): void {
+    this.fetchApiData.getFavoriteMovies().subscribe((response: any) => {
+      this.favoriteMovies = response.favoriteMovies;
+      console.log(this.favoriteMovies);
+    });
+  }
 
-  // addToFavorite(movieId: string): void {
-  //   console.log(movieId);
-  //   this.fetchApiData.addFavoriteMovie(movieId).subscribe((response) => {
-  //     this.snackBar.open('Movie has been added to your favorites.', 'OK', {
-  //       duration: 8000,
-  //     });
-  //     this.ngOnInit();
-  //   });
-  // }
+  addToFavorite(movieId: string): void {
+    console.log(movieId);
+    this.fetchApiData.addFavoriteMovie(movieId).subscribe((response) => {
+      this.snackBar.open('Movie has been added to your favorites.', 'OK', {
+        duration: 8000,
+      });
+      this.ngOnInit();
+    });
+  }
 
-  // removeFromFavorite(movieId: string): void {
-  //   console.log(movieId);
-  //   this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response) => {
-  //     this.snackBar.open('Movie has been removed from your favorites.', 'OK', {
-  //       duration: 8000,
-  //     });
-  //     this.ngOnInit();
-  //   });
-  // }
+  removeFromFavorite(movieId: string): void {
+    console.log(movieId);
+    this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response) => {
+      this.snackBar.open('Movie has been removed from your favorites.', 'OK', {
+        duration: 8000,
+      });
+      this.ngOnInit();
+    });
+  }
 
-  // isMovieFavorite(movieId: string): boolean {
-  //   return this.favoriteMovies.includes(movieId);
-  // }
+  isMovieFavorite(movieId: string): boolean {
+    return this.favoriteMovies.includes(movieId);
+  }
 
-  // toggleFavorite(movieId: string): void {
-  //   if (this.isMovieFavorite(movieId)) {
-  //     this.removeFromFavorite(movieId);
-  //   } else {
-  //     this.addToFavorite(movieId);
-  //   }
-  // }
+  toggleFavorite(movieId: string): void {
+    if (this.isMovieFavorite(movieId)) {
+      this.removeFromFavorite(movieId);
+    } else {
+      this.addToFavorite(movieId);
+    }
+  }
 
 
   /**
