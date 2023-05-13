@@ -3,36 +3,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  animation: animate 2s ease;
-}
-@keyframes animate {
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
 }
 
 h1 {
   text-align: center;
-  color: #fff;
-}
-
-a {
-  margin-left: 10px;
-  color: #69f0ae;
-  cursor: pointer;
-}
-
-mat-card > p {
-  font-size: 14px;
-  color: #fff;
-  padding: 10px;
-  border: 2px dotted #fff;
-  rotate: -8deg;
-  text-align: center;
-  transform: translate(13px, -10px);
+  color: #0000D1;
 }
 
 mat-card {
@@ -40,7 +15,6 @@ mat-card {
   align-items: center;
   width: 20rem;
   padding: 2rem;
-  background-color: #3f51b5;
 }
 
 button {
@@ -63,4 +37,4 @@ mat-card-actions {
   align-items: center;
   color: lightgray;
   font-size: 13px;
-}
+}/*# sourceMappingURL=user-login-form.component.css.map */

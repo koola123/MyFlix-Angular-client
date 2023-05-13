@@ -1,38 +1,53 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>Log In!</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form>
-            <mat-form-field>
-                <input
-                matInput
-                [(ngModel)]="userData.Username"
-                placeholder="Username"
-                type="text"
-                name="Username"
-                required
-                >
-            </mat-form-field>
-            <mat-form-field>
-                <input
-                matInput
-                [(ngModel)]="userData.Password"
-                placeholder="Password"
-                type="password"
-                name="Password"
-                required
-                >
-            </mat-form-field>
-        </form>
-    </mat-card-content>
-    <mat-card-actions>
-        <button
-        mat-raised-button
-        (click)="loginUser()"
-        color="primary"
-        >
-        Login
-        </button>
-    </mat-card-actions>
-</mat-card>
+<div class="main-wrapper">
+    <mat-card class="mat-card">
+    <h1>Welcome to MyFlix!</h1>
+    <p><i>"The Ultimate Star Wars Movies Collection"</i></p>
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <mat-card-content>
+          <div class="row">
+            <div class="col">
+              <mat-form-field>
+                <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username"
+                  #username="ngModel" class="form-control" minlength="4" maxLength="30" required>
+                <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
+                  <span *ngIf="username.errors?.['required']">
+                    Username is required.
+                  </span>
+                  <span *ngIf="username.errors?.['minlength']">
+                    Username must be at least 4 characters long.
+                  </span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field>
+                <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password"
+                  #password="ngModel" class="form-control" required minlength="4" required>
+                <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+                  <span *ngIf="password.errors?.['required']">
+                    Password is required.
+                  </span>
+                  <span *ngIf="password.errors?.['minlength']">
+                    Password must be at least 4 characters long.
+                  </span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button type="submit" color="primary">
+            Login
+          </button>
+          <div class="signup-text">
+            <p>Don't have an account? </p>
+            <a (click)="openUserRegistrationDialog()">
+              Sign Up
+            </a>
+          </div>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>

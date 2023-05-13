@@ -1,14 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
   styleUrls: ['./user-registration-form.component.scss'],
 })
-export class UserRegistrationFormComponent implements OnInit {
+export class UserRegistrationFormComponent {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
   constructor(
@@ -19,16 +20,25 @@ export class UserRegistrationFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  registerUser(): void {
+  storeDate(event: MatDatepickerInputEvent<Date>) {
+    this.userData.Birthday = `${event.value}`;
+  }
+
+  /**
+   * send the form inputs to the backend
+   * @function onSubmit
+   */
+
+  onSubmit(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe(
-      (result) => {
-        this.dialogRef.close();
-        this.snackBar.open(`Wecome ${result.Username}`, 'OK', {
-          duration: 2000,
-        });
+      (response) => {
+          this.dialogRef.close();
+          this.snackBar.open(`User ${response.Username} has been registered`, 'OK', {
+            duration: 2000,
+          });
       },
-      (result) => {
-        this.snackBar.open('Failed to Login User', 'OK', {
+      (response) => {
+        this.snackBar.open(`Registration failed`, 'OK', {
           duration: 2000,
         });
       }

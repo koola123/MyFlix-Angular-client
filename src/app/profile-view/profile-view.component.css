@@ -1,0 +1,50 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  padding-top: 2rem;
+  color: #3B71CA;
+}
+
+mat-card {
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  padding: 2rem;
+}
+
+mat-icon {
+  font-size: 50px;
+  color: #bcb88a;
+  width: 50px;
+  height: 50px;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+mat-card-actions {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 8px 0 8px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-error {
+  font-size: 13px;
+}
+
+mat-divider {
+  width: 100%;
+  margin-top: 3rem;
+}/*# sourceMappingURL=profile-view.component.css.map */
