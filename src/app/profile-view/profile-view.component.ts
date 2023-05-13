@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { formatDate } from '@angular/common';
 
 
 @Component({
@@ -12,11 +13,13 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 })
 export class ProfileViewComponent {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: ''};
+  favoriteMovies: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
-    public router: Router
+    public router: Router,
+   
   ) {}
 
   ngOnInit(): void {
@@ -33,7 +36,14 @@ export class ProfileViewComponent {
 
   getUser(): void {
     this.fetchApiData.getUser().subscribe((response: any) => {
-      this.userData = response.data;
+      this.userData.Username = response.Username;
+      this.userData.Password = response.Password;
+      this.userData.Email = response.Email;
+      this.userData.Birthday = formatDate(response.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
+      // this.fetchApiData.getAllMovies().subscribe((response: any) => {
+      //   this.favoriteMovies = response.filter((movie: {_id: any, }) => this.userData.Username.FavoriteMovies.indexOf(movie._id) >= 0);
+      // });
+      console.log(response);
       console.log(this.userData);
       return this.userData;
     });
@@ -70,19 +80,16 @@ export class ProfileViewComponent {
    */
 
  onDelete(): void {
-  this.fetchApiData.deleteUser().subscribe(
-    (response) => {
-      if (response.success === true) {
-        this.snackBar.open(response.message, 'OK', {
-          duration: 8000,
-        });
+  this.fetchApiData.deleteUser().subscribe((response) => {
         localStorage.clear();
         this.router.navigate(['welcome']);
-      }
-    },
+        this.snackBar.open(`User successfully deleted.`, 'OK', {
+          duration: 2000,
+        });
+      },
     (response) => {
       this.snackBar.open(response, 'OK', {
-        duration: 8000,
+        duration: 2000,
       });
     }
   );

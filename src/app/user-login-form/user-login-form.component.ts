@@ -45,7 +45,7 @@ export class UserLoginFormComponent {
         this.router.navigate(['movies']);
      
       },
-      (result) => {
+      (response) => {
         this.snackBar.open(`User Login failed`,'OK', {
           duration: 2000,
         });

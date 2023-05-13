@@ -41,9 +41,8 @@ export class MovieCardComponent {
 
 
 getMovies(): void {
-  this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.movies = resp;
-      console.log(this.movies);
+  this.fetchApiData.getAllMovies().subscribe((response: any) => {
+      this.movies = response;
       return this.movies;
     });
   }
@@ -55,11 +54,12 @@ getMovies(): void {
    */
 
   getFavoriteMovies(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((response: any) => {
-      this.favoriteMovies = response.favoriteMovies;
-      console.log(this.favoriteMovies);
+    this.fetchApiData.getUser().subscribe((response: any) => {
+      this.favoriteMovies = response.Username.FavoriteMovies;
+      console.log(response)
     });
   }
+
 
   addToFavorite(movieId: string): void {
     console.log(movieId);

@@ -76,3 +76,13 @@
     </form>
   </mat-card>
 </div>
+
+<div class="favorite-container">
+  <div class="flex-container">
+    <mat-card *ngFor="let movie of favoriteMovies;">
+      <mat-card-header>
+        <mat-card-title>{{movie.Title}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>
