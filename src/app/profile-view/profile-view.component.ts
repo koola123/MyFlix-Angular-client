@@ -35,16 +35,14 @@ export class ProfileViewComponent {
   }
 
   getUser(): void {
-    this.fetchApiData.getUser().subscribe((response: any) => {
-      this.userData.Username = response.Username;
-      this.userData.Password = response.Password;
-      this.userData.Email = response.Email;
-      this.userData.Birthday = formatDate(response.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
-      // this.fetchApiData.getAllMovies().subscribe((response: any) => {
-      //   this.favoriteMovies = response.filter((movie: {_id: any, }) => this.userData.Username.FavoriteMovies.indexOf(movie._id) >= 0);
-      // });
-      console.log(response);
-      console.log(this.userData);
+    this.fetchApiData.getUser().subscribe((userResponse: any) => {
+      this.userData.Username = userResponse.Username;
+      this.userData.Password = userResponse.Password;
+      this.userData.Email = userResponse.Email;
+      this.userData.Birthday = formatDate(userResponse.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
+      this.fetchApiData.getAllMovies().subscribe((moviesResponse: any) => {
+        this.favoriteMovies = moviesResponse.filter((movie: {_id: any, }) => userResponse.FavoriteMovies.indexOf(movie._id) >= 0);
+      });
       return this.userData;
     });
   }
@@ -67,7 +65,7 @@ export class ProfileViewComponent {
           }
         },
         (response) => {
-          this.snackBar.open(response, 'OK', {
+          this.snackBar.open('Update failed.', 'OK', {
             duration: 8000,
           });
         }

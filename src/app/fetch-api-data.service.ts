@@ -206,8 +206,9 @@ export class FetchApiDataService {
     return this.http
       .delete(`${apiUrl}/users/${username}`, {
         headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+        responseType: "text",
       })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+      .pipe(catchError(this.handleError));
   }
 
   /**

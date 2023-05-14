@@ -26,7 +26,7 @@ export class MovieCardComponent {
      ngOnInit(): void {
       if (localStorage.getItem('token')) {
         this.getMovies();
-        // this.getFavoriteMovies();
+        this.getFavoriteMovies();
       } else {
         this.router.navigate(['welcome']);
       }
@@ -55,7 +55,7 @@ getMovies(): void {
 
   getFavoriteMovies(): void {
     this.fetchApiData.getUser().subscribe((response: any) => {
-      this.favoriteMovies = response.Username.FavoriteMovies;
+      this.favoriteMovies = response.FavoriteMovies;
       console.log(response)
     });
   }

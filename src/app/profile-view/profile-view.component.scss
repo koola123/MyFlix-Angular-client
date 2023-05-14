@@ -7,12 +7,34 @@
     padding-top: 2rem;
     color: #3B71CA;
   }
+
+  img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .favorite-cards {
+    margin: 13px;
+  }
+
+  .favorites-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .movie-card > div {
+    text-align: center;
+    margin-top: 20px;
+    height: 10px;
+  }
   
   mat-card {
     justify-content: center;
     align-items: center;
     width: 20rem;
-    padding: 2rem;
+    padding: 1rem;
   }
   
   mat-icon {

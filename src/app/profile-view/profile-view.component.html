@@ -7,9 +7,21 @@
         <div class="row">
           <div class="col">
             <mat-form-field>
-              <input matInput [(ngModel)]="userData.Username" #username="ngModel" placeholder="Username" type="text"
-                name="Username" class="form-control" minlength="4" maxLength="30" required>
-              <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
+              <input
+                matInput
+                [(ngModel)]="userData.Username"
+                #username="ngModel"
+                placeholder="Username"
+                type="text"
+                name="Username"
+                class="form-control"
+                minlength="4"
+                maxLength="30"
+                required
+              />
+              <mat-error
+                *ngIf="username.invalid && (username.dirty || username.touched)"
+              >
                 <span *ngIf="username.errors?.['required']">
                   Username is required.
                 </span>
@@ -23,9 +35,21 @@
         <div class="row">
           <div class="col">
             <mat-form-field>
-              <input matInput [(ngModel)]="userData.Password" type="password" #password="ngModel" placeholder="Password"
-                name="Password" class="form-control" required minlength="4" required>
-              <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+              <input
+                matInput
+                [(ngModel)]="userData.Password"
+                type="password"
+                #password="ngModel"
+                placeholder="Password"
+                name="Password"
+                class="form-control"
+                required
+                minlength="4"
+                required
+              />
+              <mat-error
+                *ngIf="password.invalid && (password.dirty || password.touched)"
+              >
                 <span *ngIf="password.errors?.['required']">
                   Password is required.
                 </span>
@@ -40,9 +64,20 @@
           <div class="col">
             <mat-form-field>
               <mat-label>Enter your email</mat-label>
-              <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email"
-                #email="ngModel" class="form-control" email required>
-              <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+              <input
+                matInput
+                [(ngModel)]="userData.Email"
+                type="email"
+                placeholder="Email"
+                name="Email"
+                #email="ngModel"
+                class="form-control"
+                email
+                required
+              />
+              <mat-error
+                *ngIf="email.invalid && (email.dirty || email.touched)"
+              >
                 <span *ngIf="email.errors?.['required']">
                   Email is required.
                 </span>
@@ -57,32 +92,55 @@
           <div class="col">
             <mat-form-field>
               <mat-label>Choose your Birthday</mat-label>
-              <input matInput [matDatepicker]="picker" [(ngModel)]="userData.Birthday" class="form-control"
-                name="Birthday" #birthday="ngModel" required>
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                [(ngModel)]="userData.Birthday"
+                class="form-control"
+                name="Birthday"
+                #birthday="ngModel"
+                required
+              />
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button type="submit" [disabled]="!registerForm.form.valid" color="primary">
+        <button
+          mat-raised-button
+          type="submit"
+          [disabled]="!registerForm.form.valid"
+          color="primary"
+        >
           Update
         </button>
-        <button mat-raised-button type="button" (click)="onDelete()" color="primary">
+        <button
+          mat-raised-button
+          type="button"
+          (click)="onDelete()"
+          color="primary"
+        >
           Delete
         </button>
       </mat-card-actions>
     </form>
   </mat-card>
-</div>
-
-<div class="favorite-container">
-  <div class="flex-container">
-    <mat-card *ngFor="let movie of favoriteMovies;">
-      <mat-card-header>
-        <mat-card-title>{{movie.Title}}</mat-card-title>
-      </mat-card-header>
+  <h1>Favorite Movies:</h1>
+  <div class="favorites-container">
+    <mat-card class="favorite-cards" *ngFor="let movie of favoriteMovies">
+      <mat-card-content>
+        <mat-card-title>
+          <div class="movie-card">
+          <img src={{movie.ImagePath}} alt={{movie.Title}}>
+          <div>{{movie.Title}}</div>
+          </div>
+        </mat-card-title>
+      </mat-card-content>
     </mat-card>
   </div>
 </div>
