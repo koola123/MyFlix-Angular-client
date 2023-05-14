@@ -37,7 +37,6 @@ export class ProfileViewComponent {
   getUser(): void {
     this.fetchApiData.getUser().subscribe((userResponse: any) => {
       this.userData.Username = userResponse.Username;
-      this.userData.Password = userResponse.Password;
       this.userData.Email = userResponse.Email;
       this.userData.Birthday = formatDate(userResponse.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
       this.fetchApiData.getAllMovies().subscribe((moviesResponse: any) => {
@@ -57,13 +56,12 @@ export class ProfileViewComponent {
     onSubmit(): void {
       this.fetchApiData.editUser(this.userData).subscribe(
         (response) => {
-          if (response.success === true) {
-            localStorage.setItem('user', response.data.Username);
-            this.snackBar.open(response.message, 'OK', {
+          console.log(response);
+            localStorage.setItem('user', response.Username);
+            this.snackBar.open(`Updated username.`, 'OK', {
               duration: 8000,
             });
-          }
-        },
+          },
         (response) => {
           this.snackBar.open('Update failed.', 'OK', {
             duration: 8000,

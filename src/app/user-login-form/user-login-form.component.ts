@@ -43,7 +43,6 @@ export class UserLoginFormComponent {
         localStorage.setItem('user', this.userData.Username);
         localStorage.setItem('token', response.token);
         this.router.navigate(['movies']);
-     
       },
       (response) => {
         this.snackBar.open(`User Login failed`,'OK', {

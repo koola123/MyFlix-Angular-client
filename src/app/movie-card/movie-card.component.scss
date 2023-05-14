@@ -11,6 +11,13 @@
     width: 100%;
     padding-top: 2rem;
   }
+
+  .spinner {
+    display: flex;
+    font-size: 100px;
+    justify-content: center;
+    width: 100%;
+  }
   
   mat-card {
     justify-content: center;

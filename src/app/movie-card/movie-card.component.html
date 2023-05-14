@@ -1,4 +1,8 @@
+
 <app-navbar></app-navbar>
+<div class="spinner">
+  <mat-spinner *ngIf="showSpinner" color="primary"></mat-spinner>
+</div>
 <div class="mat-app-background container">
   <div class="flex-container">
     <mat-card *ngFor="let movie of movies;">

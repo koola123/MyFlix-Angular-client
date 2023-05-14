@@ -34,6 +34,7 @@ import { GenreComponent } from './genre/genre.component';
 import { DirectorComponent } from './director/director.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -62,6 +63,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatProgressSpinnerModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,

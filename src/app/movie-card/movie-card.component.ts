@@ -13,6 +13,7 @@ import { DirectorComponent } from '../director/director.component';
   styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent {
+  showSpinner: boolean = false;
   movies: any[] = [];
   favoriteMovies: any[] = [];
   constructor(
@@ -41,7 +42,9 @@ export class MovieCardComponent {
 
 
 getMovies(): void {
+  this.showSpinner = true;
   this.fetchApiData.getAllMovies().subscribe((response: any) => {
+      this.showSpinner = false;
       this.movies = response;
       return this.movies;
     });
