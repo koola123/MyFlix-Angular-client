@@ -58,7 +58,7 @@ export class ProfileViewComponent {
         (response) => {
           console.log(response);
             localStorage.setItem('user', response.Username);
-            this.snackBar.open(`Updated username.`, 'OK', {
+            this.snackBar.open(`Profile info updated.`, 'OK', {
               duration: 8000,
             });
           },

@@ -232,9 +232,6 @@ export class FetchApiDataService {
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occurred:', error.error.message);
-    } else {
-      console.error(`Error Status code ${error.status}, Error body is: ${error.error.message}`
-      );
     }
     return throwError(
       () => new Error(`${error.status} / ${error.error.message}`)
