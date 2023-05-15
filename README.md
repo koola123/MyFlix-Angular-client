@@ -2,7 +2,7 @@
 Angular client for an application called myFlix based on its existing server-side code (REST API and database). A single-page, responsive app with routing, rich interactions, several interface views, and a polished user experience.
 This site was built using GitHub Pages.<br/>
 
-<b><u>[LIVE DEMO](https://koola123.github.io/myFlix-Angular-client/welcome)</u></b>
+<b><u>LIVE DEMO = https://koola123.github.io/myFlix-Angular-client/welcome</u></b>
 
 ### Application features
 - Display a welcome view where users will be able to either log in or register an account.
