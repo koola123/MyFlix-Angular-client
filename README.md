@@ -6,7 +6,7 @@ This site was built using GitHub Pages.<br/>
 
 ### Application features
 - Display a welcome view where users will be able to either log in or register an account.
-- Once authenticated, the user can view all movies.
+- Once authenticated, the user can view all movies from the API.
 - On each movie card 4 buttons are available with the next functions:
 1.	A genre button that when clicked a modal opens with the details about the genre of that particular movie.
 2.	A director button that when clicked a modal opens with the details about the director of that particular movie.
