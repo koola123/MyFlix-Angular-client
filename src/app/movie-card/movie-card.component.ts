@@ -10,7 +10,7 @@ import { DirectorComponent } from '../director/director.component';
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  styleUrls: ['./movie-card.component.scss'],
 })
 export class MovieCardComponent {
   showSpinner: boolean = false;
@@ -21,18 +21,16 @@ export class MovieCardComponent {
     public dialog: MatDialog,
     public router: Router,
     public snackBar: MatSnackBar
-    ) {}
+  ) {}
 
-
-     ngOnInit(): void {
-      if (localStorage.getItem('token')) {
-        this.getMovies();
-        this.getFavoriteMovies();
-      } else {
-        this.router.navigate(['welcome']);
-      }
+  ngOnInit(): void {
+    if (localStorage.getItem('token')) {
+      this.getMovies();
+      this.getFavoriteMovies();
+    } else {
+      this.router.navigate(['welcome']);
     }
-
+  }
 
   /**
    * fetch movies from FetchApiDataService service getAllMovies()
@@ -40,10 +38,9 @@ export class MovieCardComponent {
    * @function getMovies
    */
 
-
-getMovies(): void {
-  this.showSpinner = true;
-  this.fetchApiData.getAllMovies().subscribe((response: any) => {
+  getMovies(): void {
+    this.showSpinner = true;
+    this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.showSpinner = false;
       this.movies = response;
       return this.movies;
@@ -59,10 +56,16 @@ getMovies(): void {
   getFavoriteMovies(): void {
     this.fetchApiData.getUser().subscribe((response: any) => {
       this.favoriteMovies = response.FavoriteMovies;
-      console.log(response)
+      console.log(response);
     });
   }
 
+  /**
+   * add favorite movies from FetchApiDataService service addFavoriteMovie()
+   * @returns the added movie from the favorite movies array
+   * @function addFavoriteMovie
+   * @param movieId
+   */
 
   addToFavorite(movieId: string): void {
     console.log(movieId);
@@ -74,6 +77,13 @@ getMovies(): void {
     });
   }
 
+  /**
+   * remove favorite movies from FetchApiDataService service removeFavoriteMovie()
+   * @returns an updated favoriteMovies array
+   * @function removeFavoriteMovie
+   * @param movieId
+   */
+
   removeFromFavorite(movieId: string): void {
     console.log(movieId);
     this.fetchApiData.removeFavoriteMovie(movieId).subscribe((response) => {
@@ -84,9 +94,23 @@ getMovies(): void {
     });
   }
 
+  /**
+   * runs a boolean if selected movie is the favorite movie
+   * @returns true or false
+   * @function isMovieFavorite
+   * @param movieId
+   */
+
   isMovieFavorite(movieId: string): boolean {
     return this.favoriteMovies.includes(movieId);
   }
+
+  /**
+   * toggles the favorite movies function to true or false
+   * @returns the favorite movies
+   * @function toggleFavorite
+   * @param movieId
+   */
 
   toggleFavorite(movieId: string): void {
     if (this.isMovieFavorite(movieId)) {
@@ -95,7 +119,6 @@ getMovies(): void {
       this.addToFavorite(movieId);
     }
   }
-
 
   /**
    * opens the MovieGenreComponent dialog

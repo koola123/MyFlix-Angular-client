@@ -34,6 +34,13 @@ export class ProfileViewComponent {
     this.userData.Birthday = `${event.value}`;
   }
 
+  /**
+   * Get the profile information of the user by getUser()
+   * It will fill out all form fields with the data of the current user like
+   * Username, Email, Birthday, and FavoriteMovies info
+   * @function getUser
+   */
+
   getUser(): void {
     this.fetchApiData.getUser().subscribe((userResponse: any) => {
       this.userData.Username = userResponse.Username;

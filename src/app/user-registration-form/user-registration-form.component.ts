@@ -20,6 +20,12 @@ export class UserRegistrationFormComponent {
 
   ngOnInit(): void {}
 
+  /**
+   * store data in a special date format
+   * @function storeData
+   * @param event 
+   */
+
   storeDate(event: MatDatepickerInputEvent<Date>) {
     this.userData.Birthday = `${event.value}`;
   }
