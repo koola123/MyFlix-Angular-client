@@ -33,8 +33,8 @@ Install @angular/cli
 #### Clone the repository:
 
 ````
-git clone https://github.com/koola123/myFlix-angular.git
-cd myFlix-angular
+git clone https://github.com/koola123/myFlix-Angular-client.git
+cd myFlix-Angular-client
 ng serve
 
 ````
