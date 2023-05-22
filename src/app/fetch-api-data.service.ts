@@ -18,7 +18,7 @@ export class FetchApiDataService {
   /**
    * User registration
    * @service POST to the user endpoint
-   * @param userDetails
+   * @param userDetails {Username: "", Password: "", Email: "", Birthday: ""}
    * @returns A JSON object holding data about the added user
    * @function userRegistration
    */
@@ -32,7 +32,7 @@ export class FetchApiDataService {
   /**
    * User login
    * @service POST to the login endpoint
-   * @param userDetails
+   * @param userDetails {Username: "", Password: "", Email: "", Birthday: ""}
    * @returns A JSON object holding data about the logged-in user
    * @function userLogin
    */

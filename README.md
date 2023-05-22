@@ -5,7 +5,13 @@ This site was built using GitHub Pages.
 
 <br/>
 
-<strong>[LIVE DEMO](https://koola123.github.io/myFlix-Angular-client/)</strong>
+<strong>[LIVE DEMO](https://koola123.github.io/myFlix-Angular-client/welcome)</strong>
+
+<br>
+
+<img src="img/myflix-angular1.png" width="768px">
+<img src="img/myflix-angular2.png" width="768px">
+<img src="img/myflix-angular3.png" width="768px">
 
 ![]()
 
