@@ -1,4 +1,4 @@
-## 🚀 MyFlix Angular Client
+## MyFlix Angular Client
 
 Angular client for an application called myFlix based on its existing server-side code (REST API and database). A single-page, responsive app with routing, rich interactions, several interface views, and a polished user experience.
 This site was built using GitHub Pages.
