@@ -3,15 +3,13 @@
 Angular client for an application called myFlix based on its existing server-side code (REST API and database). A single-page, responsive app with routing, rich interactions, several interface views, and a polished user experience.
 This site was built using GitHub Pages.
 
-<br/>
-
 <strong>[LIVE DEMO](https://koola123.github.io/myFlix-Angular-client/welcome)</strong>
 
 <br>
-
-<img src="img/myflix-angular1.png" width="768px">
-<img src="img/myflix-angular2.png" width="768px">
-<img src="img/myflix-angular3.png" width="768px">
+<p right-align>
+<img src="img/myflix-angular1.png" width="500px">
+<img src="img/myflix-angular2.png" width="500px">
+</p>
 
 ![]()
 
@@ -28,9 +26,6 @@ This site was built using GitHub Pages.
 4.	A Favorite button that when clicked the particular movie will be added the user's favorite movies
 5.	A profile view where the user details can be edited or the user can be deleted from the database.
 
-<br>
-
-
 ## Technology used:
 
 - Angular
@@ -39,19 +34,14 @@ This site was built using GitHub Pages.
 - HTML/CSS
 - TypeDoc
 
-<br>
-
-## Getting started:
-
-### Prerequisites
-
-<br>
-
 `install @angular/cli`
 
 <br>
 
+
 ## 🛠 Installation:
+
+#### Prerequisites / Getting started
 
 ````
 git clone https://github.com/koola123/
@@ -60,6 +50,7 @@ cd myFlix-Angular-client
 npm install
 ng serve
 ````
+
 <br>
 
 Version 1.0.0
