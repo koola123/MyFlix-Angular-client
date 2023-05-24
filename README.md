@@ -7,8 +7,8 @@ This site was built using GitHub Pages.
 
 <br>
 <p right-align>
-<img src="img/myflix-angular1.png" width="300px">
-<img src="img/myflix-angular2.png" width="300px">
+<img src="img/myflix-angular1.png" width="450px">
+<img src="img/myflix-angular2.png" width="450px">
 </p>
 
 ![]()
