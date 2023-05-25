@@ -26,7 +26,7 @@ This site was built using GitHub Pages.
 4.	A Favorite button that when clicked the particular movie will be added the user's favorite movies
 5.	A profile view where the user details can be edited or the user can be deleted from the database.
 
-## Technology used:
+## 🎯 Technology stack:
 
 - Angular
 - Angular Material UI
