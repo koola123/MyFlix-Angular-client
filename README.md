@@ -13,7 +13,17 @@ This site was built using GitHub Pages.
 
 ![]()
 
-## Application Features:
+# 🎯 Technology stack:
+
+- Angular
+- Angular Material UI
+- TypeScript
+- HTML/CSS
+- TypeDoc
+
+👉🏻 `install @angular/cli`
+
+# Application Features:
 
 - Display a welcome view where users will be able to either log in or register an account.
 - Once authenticated, the user can view all movies from the API.
@@ -26,20 +36,9 @@ This site was built using GitHub Pages.
 4.	A Favorite button that when clicked the particular movie will be added the user's favorite movies
 5.	A profile view where the user details can be edited or the user can be deleted from the database.
 
-## 🎯 Technology stack:
-
-- Angular
-- Angular Material UI
-- TypeScript
-- HTML/CSS
-- TypeDoc
-
-`install @angular/cli`
-
 <br>
 
-
-## 🛠 Installation:
+# 🛠 Installation:
 
 #### Prerequisites / Getting started
 
