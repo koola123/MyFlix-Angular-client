@@ -12,7 +12,7 @@ This site was built using GitHub Pages.
 
 ![]()
 
-# Technology stack:
+## Technology stack:
 
 - Angular
 - Angular Material UI
@@ -22,7 +22,7 @@ This site was built using GitHub Pages.
 
 `install @angular/cli`
 
-# Application Features:
+## Application Features:
 
 - Display a welcome view where users will be able to either log in or register an account.
 - Once authenticated, the user can view all movies from the API.
@@ -37,7 +37,7 @@ This site was built using GitHub Pages.
 
 <br>
 
-# 🛠 Installation:
+## 🛠 Installation:
 
 #### Prerequisites / Getting started
 
