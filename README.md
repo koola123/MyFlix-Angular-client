@@ -7,13 +7,12 @@ This site was built using GitHub Pages.
 
 <br>
 <p right-align>
-<img src="img/myflix-angular1.png" width="400px">
-<img src="img/myflix-angular2.png" width="400px">
+<img src="img/myflix-angular1.png" width="900px">
 </p>
 
 ![]()
 
-# 🎯 Technology stack:
+# Technology stack:
 
 - Angular
 - Angular Material UI
@@ -21,7 +20,7 @@ This site was built using GitHub Pages.
 - HTML/CSS
 - TypeDoc
 
-👉🏻 `install @angular/cli`
+`install @angular/cli`
 
 # Application Features:
 
