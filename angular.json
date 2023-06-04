@@ -36,7 +36,7 @@
           },
           "configurations": {
             "github-pages": {
-              "baseHref":"/myflix-angular-client/"
+              "baseHref":"/myFlix-Angular-client/"
             },
             "production": {
               "budgets": [
